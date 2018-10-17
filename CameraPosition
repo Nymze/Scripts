@@ -1,0 +1,79 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraPositions : MonoBehaviour {
+
+    public Transform[] views;
+    public float transitionSpeed;
+    Transform currentView;
+
+    public GameObject[] Labels;
+
+    // Use this for initialization
+    void Start () {
+
+
+		
+	}
+
+    private void Update()
+    {
+
+       
+
+       /* if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentView = views[0];
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentView = views[1];
+            
+        } */
+
+
+    }
+
+    public void GoToViewOne()
+    {
+
+ 
+            currentView = views[0];
+            Labels[0].SetActive(true);
+            Labels[1].SetActive(false);
+
+
+    }
+
+    public void GoToViewTwo()
+    {
+
+
+            currentView = views[1];
+            Labels[0].SetActive(false);
+            Labels[1].SetActive(true);
+
+    }
+
+    public void GoToViewThree()
+    {
+
+
+        currentView = views[2];
+        Labels[1].SetActive(false);
+        Labels[0].SetActive(false);
+
+    }
+
+    // Update is called once per frame
+    void LateUpdate () {
+
+        //lerp position
+
+        transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
+
+
+    }
+}
