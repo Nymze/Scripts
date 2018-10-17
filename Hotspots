@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class hotspot : MonoBehaviour {
+
+    public GameObject Labeluno;
+    public Camera MyCamera;
+    public float speed;
+
+    void OnMouseDown()
+    {
+        Labeluno.SetActive(true);
+
+        
+    }
+
+
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+
+		
+	}
+}
